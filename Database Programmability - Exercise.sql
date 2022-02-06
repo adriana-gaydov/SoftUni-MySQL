@@ -262,11 +262,3 @@ SELECT account_id, CONCAT('Balance change for account: ', account_id), CONCAT('O
 FROM `logs` ORDER BY log_id DESC LIMIT 1; 
 END$$
 DELIMITER ;
-
-drop trigger log_logs_trigger;
- 
-update accounts
-set balance = balance + 10
-where id = 1;
-
-select * from notification_emails;
